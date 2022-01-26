@@ -1,6 +1,7 @@
 # Анализатор качества репозиториев
 
 [![Actions Status](https://github.com/DimaKabanov/rails-project-lvl4/workflows/hexlet-check/badge.svg)](https://github.com/DimaKabanov/rails-project-lvl4/actions)
+[![check](https://github.com/DimaKabanov/rails-project-lvl4/actions/workflows/check.yml/badge.svg)](https://github.com/DimaKabanov/rails-project-lvl4/actions/workflows/check.yml)
 
 ## Описание
 
