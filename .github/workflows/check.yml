@@ -1,0 +1,41 @@
+name: check
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup SQLite
+        run: |
+          sudo apt-get install libsqlite3-dev
+      - name: Setup ruby and install gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'yarn'
+
+      - name: Install node packages
+        run: yarn install --pure-lockfile
+
+      - name: Run linters
+        run: |
+          make lint
+      - name: Run tests
+        env:
+          RAILS_ENV: test
+        run: |
+          make test
