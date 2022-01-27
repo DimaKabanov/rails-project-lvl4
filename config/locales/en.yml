@@ -2,6 +2,13 @@ en:
   title: Repository quality analyzer
   nav:
     home: Home
+    login: Sign in with github
+    logout: Logout
+    repos: Repositories
+  messages:
+    welcome_user: Welcome to the Repository quality analyzer, %{user}!
+    inсorrect_user: Failed to log in
+    goodby: Goodby!
   layouts:
     shared:
       footer:
