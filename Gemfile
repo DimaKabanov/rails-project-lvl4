@@ -5,7 +5,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.1'
 
+gem 'dotenv-rails', groups: %i[development test]
+
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-rails_csrf_protection'
+
+gem 'octokit', '~> 4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
