@@ -7,6 +7,8 @@ ruby '3.0.1'
 
 gem 'dotenv-rails', groups: %i[development test]
 
+gem 'enumerize'
+
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
 gem 'omniauth'

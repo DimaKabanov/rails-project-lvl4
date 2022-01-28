@@ -92,6 +92,8 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    enumerize (2.4.0)
+      activesupport (>= 3.2)
     erubi (1.10.0)
     faraday (1.9.3)
       faraday-em_http (~> 1.0)
@@ -317,6 +319,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   dotenv-rails
+  enumerize
   faker!
   i18n-debug
   jbuilder (~> 2.7)

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  link: MyString
+  repo_name: MyString
+  language: MyString
+  repo_created_at: MyString
+  repo_updated_ad: MyString
+
+two:
+  link: MyString
+  repo_name: MyString
+  language: MyString
+  repo_created_at: MyString
+  repo_updated_ad: MyString
