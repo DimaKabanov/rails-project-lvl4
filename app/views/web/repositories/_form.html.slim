@@ -1,0 +1,7 @@
+= simple_form_for(repository, url: url) do |f|
+  = f.error_notification
+
+  .mb-3
+    = f.input :link
+  .actions
+    = f.button :submit, class: 'btn btn-primary'

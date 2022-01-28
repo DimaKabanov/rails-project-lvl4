@@ -1,0 +1,9 @@
+en:
+  web:
+    repositories:
+      index:
+        new: New repository
+        empty: You haven't added a repository yet
+        name: Name
+        language: Language
+        passed: Last check passed
