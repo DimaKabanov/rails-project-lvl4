@@ -7,3 +7,5 @@ en:
         name: Name
         language: Language
         passed: Last check passed
+      create:
+        success: Repository was successfully created

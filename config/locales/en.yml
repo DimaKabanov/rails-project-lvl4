@@ -13,3 +13,7 @@ en:
     shared:
       footer:
         hexlet_title: © Hexlet, %{year}
+  enumerize:
+    repository:
+      language:
+        javascript: JavaScript

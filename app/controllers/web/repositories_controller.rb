@@ -6,15 +6,22 @@ class Web::RepositoriesController < ApplicationController
   end
 
   def new
-    client = Octokit::Client.new access_token: ENV['GITHUB_PERSONAL_ACCESS_TOKEN'], per_page: 200
-    client.repos
+    available_languages = Repository.language.values
+
+    client = Octokit::Client.new access_token: current_user.token, per_page: 200
+    @repos = client.repos
+                   .select { |repo| repo.language.present? }
+                   .filter { |repo| available_languages.include? repo.language.downcase }
+                   .map { |repo| [repo.full_name, repo.id] }
+
     @repository = current_user.repositories.build
   end
 
   def create
-    @repository = current_user.repositories.build(bulletin_params)
+    @repository = current_user.repositories.build(repository_params)
 
     if @repository.save
+      RepositoryLoaderJob.perform_later @repository.id, current_user.token
       redirect_to repositories_path, notice: t('.success')
     else
       render :new
@@ -24,6 +31,6 @@ class Web::RepositoriesController < ApplicationController
   private
 
   def repository_params
-    params.require(:repository).permit(:link)
+    params.require(:repository).permit(:github_id)
   end
 end
