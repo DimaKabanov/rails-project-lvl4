@@ -17,6 +17,8 @@ gem 'omniauth-rails_csrf_protection'
 
 gem 'octokit', '~> 4.0'
 
+gem 'pundit'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 gem 'slim-rails'
