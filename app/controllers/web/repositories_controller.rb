@@ -4,8 +4,13 @@ class Web::RepositoriesController < ApplicationController
   after_action :verify_authorized
 
   def index
+    @repositories = current_user&.repositories
     authorize @repositories
-    @repositories = current_user.repositories
+  end
+
+  def show
+    @repository = Repository.find(params[:id])
+    authorize @repository
   end
 
   def new

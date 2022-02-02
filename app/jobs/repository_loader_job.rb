@@ -12,7 +12,7 @@ class RepositoryLoaderJob < ApplicationJob
 
     repository.update(
       github_id: found_repo[:id],
-      repo_name: found_repo[:name],
+      repo_name: found_repo[:full_name],
       language: found_repo[:language].downcase,
       repo_created_at: found_repo[:created_at],
       repo_updated_at: found_repo[:updated_at]

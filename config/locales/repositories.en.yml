@@ -9,3 +9,12 @@ en:
         passed: Last check passed
       create:
         success: Repository was successfully created
+      show:
+        name: Name
+        language: Language
+        created_at: Created at
+        updated_at: Updated at
+        id: ID
+        state: State
+        reference: Reference
+        check_passed: Check passed
