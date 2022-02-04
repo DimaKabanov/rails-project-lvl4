@@ -5,6 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.1'
 
+gem 'aasm'
+
 gem 'dotenv-rails', groups: %i[development test]
 
 gem 'enumerize'
