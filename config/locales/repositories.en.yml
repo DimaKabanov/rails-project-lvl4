@@ -10,6 +10,7 @@ en:
       create:
         success: Repository was successfully created
       show:
+        empty_checks: There are no checks for this repository yet
         name: Name
         language: Language
         created_at: Created at
