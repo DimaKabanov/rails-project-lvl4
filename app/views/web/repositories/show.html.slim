@@ -18,7 +18,7 @@
       strong.me-2 = t('.updated_at')
       span = @repository.repo_updated_at.to_formatted_s(:long)
   hr
-  - if @repository.checks.empty?
+  - if @checks.empty?
     p.text-center.p-2 = t('.empty_checks')
   - else
     table.table.table-striped
@@ -30,9 +30,10 @@
             th = t('.check_passed')
             th = t('.created_at')
         tbody
+          - @checks.each do |check|
             tr
+              td = link_to check.id, repository_check_path(@repository, check)
+              td = check.state
               td
-              td
-              td
-              td
-              td
+              td = check.passed
+              td = check.created_at.to_formatted_s(:short)
