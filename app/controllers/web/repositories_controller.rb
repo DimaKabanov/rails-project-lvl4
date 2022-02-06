@@ -30,9 +30,10 @@ class Web::RepositoriesController < ApplicationController
   def create
     authorize Repository
     @repository = current_user.repositories.build(repository_params)
+    @check = @repository.checks.build
 
     if @repository.save
-      RepositoryLoaderJob.perform_later @repository.id, current_user.token
+      RepositoryLoaderJob.perform_later @repository.id, @check.id, current_user.token
       redirect_to repositories_path, notice: t('.success')
     else
       render :new

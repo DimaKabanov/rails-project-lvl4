@@ -13,10 +13,10 @@
       span = @repository.language&.text
     p.mb-2
       strong.me-2 = t('.created_at')
-      span = @repository.repo_created_at.to_formatted_s(:long)
+      span = @repository.created_at.to_formatted_s(:long)
     p.mb-0
       strong.me-2 = t('.updated_at')
-      span = @repository.repo_updated_at.to_formatted_s(:long)
+      span = @repository.updated_at.to_formatted_s(:long)
   hr
   - if @checks.empty?
     p.text-center.p-2 = t('.empty_checks')

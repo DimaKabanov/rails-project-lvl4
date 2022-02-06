@@ -3,7 +3,7 @@
 class RepositoryLoaderJob < ApplicationJob
   queue_as :default
 
-  def perform(repository_id, token)
+  def perform(repository_id, check_id, token)
     repository = Repository.find(repository_id)
     github_id = repository.github_id
 
@@ -18,5 +18,7 @@ class RepositoryLoaderJob < ApplicationJob
       repo_created_at: found_repo[:created_at],
       repo_updated_at: found_repo[:updated_at]
     )
+
+    RepositoryCheckJob.perform_later repository_id, check_id
   end
 end
