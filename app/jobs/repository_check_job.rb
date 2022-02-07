@@ -8,6 +8,11 @@ class RepositoryCheckJob < ApplicationJob
     check = RepositoryCheck.find(check_id)
 
     repo_path = 'tmp/repo'
+    
+    if Dir.exist? repo_path
+      FileUtils.remove_dir repo_path, true
+    end
+
     Dir.mkdir(repo_path)
 
     clone_command = "git clone #{repository.clone_url} #{repo_path}"
@@ -30,8 +35,7 @@ class RepositoryCheckJob < ApplicationJob
 
     check.finish!
 
-    remove_repo_command = "rm -rf #{repo_path}"
-    start_process(remove_repo_command)
+    FileUtils.remove_dir repo_path, true
   end
 
   private
