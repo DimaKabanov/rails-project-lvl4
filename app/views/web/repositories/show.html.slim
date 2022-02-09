@@ -34,6 +34,6 @@
             tr
               td = link_to check.id, repository_check_path(@repository, check)
               td = check.state
-              td
+              td = link_to check.reference_sha, check.reference_url
               td = check.passed
               td = check.created_at.to_formatted_s(:short)

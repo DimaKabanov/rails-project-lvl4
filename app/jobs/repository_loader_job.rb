@@ -17,6 +17,6 @@ class RepositoryLoaderJob < ApplicationJob
       language: found_repo[:language].downcase
     )
 
-    RepositoryCheckJob.perform_later repository_id, check_id
+    RepositoryCheckJob.perform_later repository_id, check_id, token
   end
 end

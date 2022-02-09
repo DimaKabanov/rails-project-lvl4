@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_09_044932) do
+ActiveRecord::Schema.define(version: 2022_02_09_123320) do
 
   create_table "repositories", force: :cascade do |t|
     t.integer "github_id"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2022_02_09_044932) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "repository_id", null: false
     t.integer "error_count"
+    t.string "reference_url"
+    t.string "reference_sha"
     t.index ["repository_id"], name: "index_repository_checks_on_repository_id"
   end
 
