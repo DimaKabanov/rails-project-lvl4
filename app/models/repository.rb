@@ -8,5 +8,5 @@ class Repository < ApplicationRecord
 
   validates :github_id, presence: true
 
-  enumerize :language, in: [:javascript]
+  enumerize :language, in: %i[javascript ruby]
 end

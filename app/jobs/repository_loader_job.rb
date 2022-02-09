@@ -14,7 +14,7 @@ class RepositoryLoaderJob < ApplicationJob
       github_id: found_repo[:id],
       repo_name: found_repo[:full_name],
       clone_url: found_repo[:clone_url],
-      language: found_repo[:language].downcase,
+      language: found_repo[:language].downcase
     )
 
     RepositoryCheckJob.perform_later repository_id, check_id

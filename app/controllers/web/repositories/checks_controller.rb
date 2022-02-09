@@ -15,6 +15,5 @@ class Web::Repositories::ChecksController < ApplicationController
 
   def show
     @check = RepositoryCheck.find(params[:id])
-    @issues_count = JSON.parse(@check.result).sum { |result| result['errorCount'] }
   end
 end

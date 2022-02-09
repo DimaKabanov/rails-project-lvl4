@@ -15,9 +15,9 @@
       span = @check.passed
     p.mb-0
       strong.me-2 = t('.issues_count')
-      span = @issues_count
+      span = @check.error_count
   hr
-  - if @issues_count.zero?
+  - if @check.error_count.zero?
     p.text-center.p-2 = t('.empty_issues')
   - else
     table.table
@@ -29,10 +29,10 @@
         tbody
           - JSON.parse(@check.result).each do |result|
             tr.table-light
-              td(colspan="3") = result['filePath']
+              td(colspan="3") = result['file_path']
 
             - result['messages'].each do |message|
               tr
                 td = message['message']
-                td = message['ruleId']
-                td = "#{message['line']}:#{message['column']}"
+                td = message['rule']
+                td = message['line_column']
