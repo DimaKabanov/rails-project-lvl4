@@ -3,11 +3,11 @@
 class RepositoryLoaderJob < ApplicationJob
   queue_as :default
 
-  def perform(repository_id, check_id, token)
+  def perform(repository_id, check_id)
     repository = Repository.find(repository_id)
     github_id = repository.github_id
 
-    client = Octokit::Client.new access_token: token, per_page: 200
+    client = Octokit::Client.new(access_token: repository.user.token, per_page: 200)
     found_repo = client.repos.find { |repo| repo.id == github_id }
 
     repository.update(
@@ -17,6 +17,6 @@ class RepositoryLoaderJob < ApplicationJob
       language: found_repo[:language].downcase
     )
 
-    RepositoryCheckJob.perform_later repository_id, check_id, token
+    RepositoryCheckJob.perform_later(repository_id, check_id)
   end
 end
