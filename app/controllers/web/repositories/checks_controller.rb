@@ -26,6 +26,5 @@ class Web::Repositories::ChecksController < ApplicationController
     if @check.save
       RepositoryCheckJob.perform_later @repository.id, @check.id
     end
-    else
   end
 end
