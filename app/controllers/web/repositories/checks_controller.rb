@@ -20,6 +20,8 @@ class Web::Repositories::ChecksController < ApplicationController
   end
 
   def checks
-    pp params
+    @repository = Repository.find_by(repo_name: params[:repository][:full_name])
+    @check = @repository.checks.build
+    RepositoryCheckJob.perform_later @repository.id, @check.id
   end
 end
