@@ -31,7 +31,7 @@ class RepositoryCheckJob < ApplicationJob
 
       start_process(actions[:remove_config_command])
 
-      check_results, _exit_status = start_process(actions[:check_command])
+      check_results = start_process(actions[:check_command])
 
       results = JSON.parse(check_results)
 
@@ -60,7 +60,7 @@ class RepositoryCheckJob < ApplicationJob
   private
 
   def start_process(command)
-    Open3.popen3(command) { |_stdin, stdout, _stderr, wait_thr| [stdout.read, wait_thr.value] }
+    Open3.popen3(command) { |_stdin, stdout| stdout.read }
   end
 
   def get_check_actions(language)

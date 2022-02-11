@@ -4,7 +4,7 @@ class Web::RepositoriesController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @repositories = current_user&.repositories
+    @repositories = current_user&.repositories.order(created_at: :desc)
     authorize @repositories
   end
 

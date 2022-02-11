@@ -30,3 +30,6 @@ en:
           status: Status
           passed: Check passed
           issues_count: Issues count
+          message: Message
+          rule: Rule
+          line_column: Line Column

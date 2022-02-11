@@ -1,7 +1,13 @@
 en:
   check_mailer:
     check_success_email:
-      subject: Check complete
-      empty_issues: Congratulate. All checks have been passed
+      success_subject: Check complete
+      check_success: Congratulate. All checks in the %{repo_name} repository were successful
+      issues_count: Issues count
+      message: Message
+      rule: Rule
+      line_column: Line Column
+      watch: Watch on the website
     check_error_email:
-      subject: Check failed
+      error_subject: Check failed
+      check_error: '%{repo_name} repository check ended with an error'
