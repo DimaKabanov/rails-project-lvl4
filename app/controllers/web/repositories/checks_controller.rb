@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Web::Repositories::ChecksController < ApplicationController
+  skip_before_action :verify_authenticity_token, only [:checks]
+
   def create
     @repository = Repository.find(params[:repository_id])
     @check = @repository.checks.build
