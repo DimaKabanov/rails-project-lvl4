@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     post '/auth/:provider', to: 'auth#request', as: :auth_request
     delete '/auth/logout', to: 'auth#logout', as: :auth_logout
 
-    post '/api/checks', to: 'checks#checks', as: :api_checks
+    scope module: :repositories do
+      post '/api/checks', to: 'checks#checks', as: :api_checks
+    end
 
     resources :repositories, only: %i[index show new create] do
       scope module: :repositories do
