@@ -1,0 +1,7 @@
+en:
+  check_mailer:
+    check_success_email:
+      subject: Check complete
+      empty_issues: Congratulate. All checks have been passed
+    check_error_email:
+      subject: Check failed
