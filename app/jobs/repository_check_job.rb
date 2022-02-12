@@ -44,6 +44,7 @@ class RepositoryCheckJob < ApplicationJob
       check.update(
         passed: error_count.zero?,
         error_count: error_count,
+        language: repository.language,
         result: JSON.generate(parsed_results),
         reference_url: last_commit['html_url'],
         reference_sha: last_commit['sha'][0, 8]

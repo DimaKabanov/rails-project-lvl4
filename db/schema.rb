@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_12_061946) do
+ActiveRecord::Schema.define(version: 2022_02_12_064037) do
 
   create_table "repositories", force: :cascade do |t|
     t.integer "github_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_02_12_061946) do
   end
 
   create_table "repository_checks", force: :cascade do |t|
-    t.string "state"
+    t.string "aasm_state"
     t.boolean "passed", default: false
     t.text "result"
     t.datetime "created_at", precision: 6, null: false
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2022_02_12_061946) do
     t.integer "error_count"
     t.string "reference_url"
     t.string "reference_sha"
+    t.string "language"
+    t.string "repository"
     t.index ["repository_id"], name: "index_repository_checks_on_repository_id"
   end
 
