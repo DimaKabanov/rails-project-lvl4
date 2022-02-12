@@ -23,12 +23,12 @@ class RepositoryLoaderJob < ApplicationJob
       repository.github_id,
       'web',
       {
-        :url => api_checks_url,
-        :content_type => 'json'
+        url: api_checks_url,
+        content_type: 'json'
       },
       {
-        :events => ['push'],
-        :active => true
+        events: ['push'],
+        active: true
       }
     )
 

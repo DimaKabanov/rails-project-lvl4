@@ -23,8 +23,6 @@ class Web::Repositories::ChecksController < ApplicationController
     @repository = Repository.find_by(repo_name: params[:repository][:full_name])
     @check = @repository.checks.build
 
-    if @check.save
-      RepositoryCheckJob.perform_later @repository.id, @check.id
-    end
+    RepositoryCheckJob.perform_later(@repository.id, @check.id) if @check.save
   end
 end
