@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class Web::Repository::ChecksControllerTest < ActionDispatch::IntegrationTest
+class Web::Repositories::ChecksControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

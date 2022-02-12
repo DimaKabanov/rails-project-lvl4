@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::Repository::ChecksController < ApplicationController
+class Web::Repositories::ChecksController < ApplicationController
   def create
     @repository = Repository.find(params[:repository_id])
     @check = @repository.checks.build
@@ -14,6 +14,6 @@ class Web::Repository::ChecksController < ApplicationController
   end
 
   def show
-    @check = RepositoryCheck.find(params[:id])
+    @check = Repository::Check.find(params[:id])
   end
 end

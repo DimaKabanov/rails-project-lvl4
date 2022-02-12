@@ -19,7 +19,7 @@ class RepositoryCheckJob < ApplicationJob
 
   def perform(repository_id, check_id)
     repository = Repository.find(repository_id)
-    check = RepositoryCheck.find(check_id)
+    check = Repository::Check.find(check_id)
 
     check.check!
 
