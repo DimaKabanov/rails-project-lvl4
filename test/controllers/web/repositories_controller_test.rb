@@ -3,18 +3,13 @@
 require 'test_helper'
 
 class Web::RepositoriesControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = users(:one)
+    sign_in_as_user @user
+  end
+
   test 'should get index' do
-    get web_repositories_index_url
-    assert_response :success
-  end
-
-  test 'should get new' do
-    get web_repositories_new_url
-    assert_response :success
-  end
-
-  test 'should get create' do
-    get web_repositories_create_url
+    get repositories_path
     assert_response :success
   end
 end

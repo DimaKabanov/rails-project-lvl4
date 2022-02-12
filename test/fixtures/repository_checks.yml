@@ -4,8 +4,10 @@ one:
   state: MyString
   passed: false
   result: MyText
+  repository: one
 
 two:
   state: MyString
   passed: false
   result: MyText
+  repository: two
