@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_09_123320) do
+ActiveRecord::Schema.define(version: 2022_02_12_061946) do
 
   create_table "repositories", force: :cascade do |t|
     t.integer "github_id"
-    t.string "repo_name"
+    t.string "full_name"
     t.string "language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
     t.string "clone_url"
+    t.string "name"
     t.index ["user_id"], name: "index_repositories_on_user_id"
   end
 

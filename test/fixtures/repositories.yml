@@ -2,14 +2,16 @@
 
 one:
   github_id: 1
-  repo_name: MyString
+  full_name: MyString
+  name: MyString
   language: MyString
   clone_url: MyString
   user: one
 
 two:
   github_id: 2
-  repo_name: MyString
+  full_name: MyString
+  name: MyString
   language: MyString
   clone_url: MyString
   user: two

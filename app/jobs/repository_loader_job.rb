@@ -14,7 +14,8 @@ class RepositoryLoaderJob < ApplicationJob
 
     repository.update(
       github_id: found_repo[:id],
-      repo_name: found_repo[:full_name],
+      full_name: found_repo[:full_name],
+      name: found_repo[:name],
       clone_url: found_repo[:clone_url],
       language: found_repo[:language].downcase
     )

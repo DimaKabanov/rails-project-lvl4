@@ -1,7 +1,7 @@
 = link_to t('.watch'), repository_check_url(@check.repository, @check)
 
 - if @check.error_count.zero?
-  p = t('.check_success', repo_name: @check.repository.repo_name)
+  p = t('.check_success', full_name: @check.repository.full_name)
 - else
   p
     strong = t('.issues_count')
