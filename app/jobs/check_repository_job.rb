@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RepositoryCheckJob < ApplicationJob
+class CheckRepositoryJob < ApplicationJob
   queue_as :default
 
   before_perform do
