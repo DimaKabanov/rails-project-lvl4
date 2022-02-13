@@ -22,17 +22,21 @@ class UpdateInfoRepositoryJob < ApplicationJob
 
     CheckRepositoryJob.perform_later(repository_id)
 
-    client.create_hook(
-      repository.github_id,
-      'web',
-      {
-        url: api_checks_url,
-        content_type: 'json'
-      },
-      {
-        events: ['push'],
-        active: true
-      }
-    )
+    begin
+      client.create_hook(
+        repository.github_id,
+        'web',
+        {
+          url: api_checks_url,
+          content_type: 'json'
+        },
+        {
+          events: ['push'],
+          active: true
+        }
+      )
+    rescue StandardError => e
+      e
+    end
   end
 end
