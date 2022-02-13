@@ -8,5 +8,6 @@ class Api::ChecksController < Api::ApplicationController
     @check = @repository.checks.build
 
     CheckRepositoryJob.perform_later(@repository.id) if @check.save
+    render status: :ok
   end
 end
