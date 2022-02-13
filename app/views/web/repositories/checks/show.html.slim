@@ -17,7 +17,7 @@
       strong.me-2 = t('.issues_count')
       span = @check.error_count
   hr
-  - if @check.error_count.zero?
+  - if @check.error_count&.zero?
     p.text-center.p-2 = t('.empty_issues')
   - else
     table.table

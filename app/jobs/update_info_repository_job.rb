@@ -20,6 +20,8 @@ class UpdateInfoRepositoryJob < ApplicationJob
       language: found_repo[:language].downcase
     )
 
+    CheckRepositoryJob.perform_later(repository_id)
+
     client.create_hook(
       repository.github_id,
       'web',
@@ -32,7 +34,5 @@ class UpdateInfoRepositoryJob < ApplicationJob
         active: true
       }
     )
-
-    CheckRepositoryJob.perform_later(repository_id)
   end
 end
