@@ -33,7 +33,7 @@ class Web::RepositoriesController < ApplicationController
     @check = @repository.checks.build
 
     if @repository.save
-      UpdateInfoRepositoryJob.perform_later @repository.id, @check.id
+      UpdateInfoRepositoryJob.perform_later @repository.id
       redirect_to repositories_path, notice: t('.success')
     else
       render :new

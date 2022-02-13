@@ -17,9 +17,9 @@ class CheckRepositoryJob < ApplicationJob
     FileUtils.remove_dir(@repo_path, true)
   end
 
-  def perform(repository_id, check_id)
+  def perform(repository_id)
     repository = Repository.find(repository_id)
-    check = Repository::Check.find(check_id)
+    check = repository.checks.last
 
     check.check!
 

@@ -5,7 +5,7 @@ class UpdateInfoRepositoryJob < ApplicationJob
 
   queue_as :default
 
-  def perform(repository_id, check_id)
+  def perform(repository_id)
     repository = Repository.find(repository_id)
     github_id = repository.github_id
 
@@ -33,6 +33,6 @@ class UpdateInfoRepositoryJob < ApplicationJob
       }
     )
 
-    CheckRepositoryJob.perform_later(repository_id, check_id)
+    CheckRepositoryJob.perform_later(repository_id)
   end
 end
