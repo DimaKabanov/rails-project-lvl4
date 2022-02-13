@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RepositoryLoaderJob < ApplicationJob
+class UpdateInfoRepositoryJob < ApplicationJob
   include Rails.application.routes.url_helpers
 
   queue_as :default
@@ -33,6 +33,6 @@ class RepositoryLoaderJob < ApplicationJob
       }
     )
 
-    RepositoryCheckJob.perform_later(repository_id, check_id)
+    CheckRepositoryJob.perform_later(repository_id, check_id)
   end
 end
