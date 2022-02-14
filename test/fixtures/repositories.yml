@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  github_id: 1
+  github_id: '1'
   full_name: MyString
   name: MyString
   language: MyString
@@ -9,7 +9,7 @@ one:
   user: one
 
 two:
-  github_id: 2
+  github_id: '2'
   full_name: MyString
   name: MyString
   language: MyString

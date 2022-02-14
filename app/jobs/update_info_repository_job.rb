@@ -9,7 +9,7 @@ class UpdateInfoRepositoryJob < ApplicationJob
     github_id = repository.github_id
 
     client = Octokit::Client.new(access_token: repository.user.token, per_page: 200)
-    found_repo = client.repo(github_id)
+    found_repo = client.repo(github_id.to_i)
 
     repository.update(
       github_id: found_repo[:id],
@@ -22,7 +22,7 @@ class UpdateInfoRepositoryJob < ApplicationJob
     CheckRepositoryJob.perform_later(repository.checks.last)
 
     client.create_hook(
-      repository.github_id,
+      repository.github_id.to_i,
       'web',
       {
         url: api_checks_url,
