@@ -7,7 +7,7 @@ class Api::ChecksController < Api::ApplicationController
     @repository = Repository.find_by(full_name: params[:repository][:full_name])
     @check = @repository.checks.build
 
-    CheckRepositoryJob.perform_later(@repository) if @check.save
+    CheckRepositoryJob.perform_later(@check) if @check.save
     head :ok
   end
 end
