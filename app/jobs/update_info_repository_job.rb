@@ -9,7 +9,7 @@ class UpdateInfoRepositoryJob < ApplicationJob
     github_id = repository.github_id
 
     client = Octokit::Client.new(access_token: repository.user.token, per_page: 200)
-    found_repo = client.repos.find { |repo| repo.id == github_id }
+    found_repo = client.repo(github_id)
 
     repository.update(
       github_id: found_repo[:id],
