@@ -5,8 +5,7 @@ class UpdateInfoRepositoryJob < ApplicationJob
 
   queue_as :default
 
-  def perform(repository_id)
-    repository = Repository.find(repository_id)
+  def perform(repository)
     github_id = repository.github_id
 
     client = Octokit::Client.new(access_token: repository.user.token, per_page: 200)
@@ -20,7 +19,7 @@ class UpdateInfoRepositoryJob < ApplicationJob
       language: found_repo[:language].downcase
     )
 
-    CheckRepositoryJob.perform_later(repository_id)
+    CheckRepositoryJob.perform_later(repository)
 
     client.create_hook(
       repository.github_id,
