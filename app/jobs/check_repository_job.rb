@@ -52,7 +52,8 @@ class CheckRepositoryJob < ApplicationJob
 
       check.finish!
       CheckMailer.with(check: check).check_success_email.deliver_now
-    rescue StandardError
+    rescue StandardError => e
+      Rails.logger.debug(e)
       check.reject!
       CheckMailer.with(check: check).check_error_email.deliver_now
     end
