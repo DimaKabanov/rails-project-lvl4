@@ -8,17 +8,17 @@ class RepositoryApiStub
   def self.client(_token); end
 
   def self.get_repositories(_client)
-    repos_path = get_fixture_path('repositories.txt')
+    repos_path = get_fixture_path('repositories.json')
     JSON.parse(File.read(repos_path)).symbolize_keys
   end
 
   def self.get_repository(_client, _github_id)
-    repo_path = get_fixture_path('repository.txt')
+    repo_path = get_fixture_path('repository.json')
     JSON.parse(File.read(repo_path)).symbolize_keys
   end
 
   def self.get_repository_commits(_client, _github_id)
-    commits_path = get_fixture_path('commits.txt')
+    commits_path = get_fixture_path('commits.json')
     JSON.parse(File.read(commits_path)).symbolize_keys
   end
 
