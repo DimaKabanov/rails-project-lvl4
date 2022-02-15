@@ -1,32 +1,9 @@
 [
   {
     "filePath": "/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/__tests__/weather.test.js",
-    "messages": [
-      {
-        "ruleId": "no-undef",
-        "severity": 2,
-        "message": "'describe' is not defined.",
-        "line": 6,
-        "column": 1,
-        "nodeType": "Identifier",
-        "messageId": "undef",
-        "endLine": 6,
-        "endColumn": 9
-      },
-      {
-        "ruleId": "no-undef",
-        "severity": 2,
-        "message": "'test' is not defined.",
-        "line": 7,
-        "column": 3,
-        "nodeType": "Identifier",
-        "messageId": "undef",
-        "endLine": 7,
-        "endColumn": 7
-      }
-    ],
+    "messages": [],
     "suppressedMessages": [],
-    "errorCount": 2,
+    "errorCount": 0,
     "fatalErrorCount": 0,
     "warningCount": 0,
     "fixableErrorCount": 0,
@@ -35,21 +12,9 @@
   },
   {
     "filePath": "/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/src/bin/weather.js",
-    "messages": [
-      {
-        "ruleId": "no-undef",
-        "severity": 2,
-        "message": "'process' is not defined.",
-        "line": 19,
-        "column": 17,
-        "nodeType": "Identifier",
-        "messageId": "undef",
-        "endLine": 19,
-        "endColumn": 24
-      }
-    ],
+    "messages": [],
     "suppressedMessages": [],
-    "errorCount": 1,
+    "errorCount": 0,
     "fatalErrorCount": 0,
     "warningCount": 0,
     "fixableErrorCount": 0,
