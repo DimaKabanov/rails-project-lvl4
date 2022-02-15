@@ -1,1 +1,70 @@
-"[{\"filePath\":\"/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/__tests__/binary-search.test.js\",\"messages\":[{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'test' is not defined.\",\"line\":3,\"column\":1,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":3,\"endColumn\":5},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":4,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":4,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":5,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":5,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":6,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":6,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":7,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":7,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":8,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":8,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":9,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":9,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":10,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":10,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":11,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":11,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":12,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":12,\"endColumn\":9}],\"suppressedMessages\":[],\"errorCount\":10,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":\"import binarySearch from '../src/binary-search';\\n\\ntest('binary search', () => {\\n  expect(binarySearch([], 5)).toBeNull();\\n  expect(binarySearch([9], 5)).toBeNull();\\n  expect(binarySearch([1, 2, 3, 4, 6, 7, 8], 5)).toBeNull();\\n  expect(binarySearch([1, 2, 3, 4, 5, 6, 7, 8], 5)).toBe(4);\\n  expect(binarySearch([1, 2, 3, 4, 5, 6, 7, 8], 1)).toBe(0);\\n  expect(binarySearch([1, 2, 3, 4, 5, 6, 7, 8], 8)).toBe(7);\\n  expect(binarySearch([1, 2, 3, 5, 6, 7], 2)).toBe(1);\\n  expect(binarySearch([3, 5], 3)).toBe(0);\\n  expect(binarySearch([5], 5)).toBe(0);\\n});\\n\",\"usedDeprecatedRules\":[]},{\"filePath\":\"/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/__tests__/breadth-search.test.js\",\"messages\":[{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'test' is not defined.\",\"line\":14,\"column\":1,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":14,\"endColumn\":5},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":15,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":15,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":16,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":16,\"endColumn\":9}],\"suppressedMessages\":[],\"errorCount\":3,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":\"import breadthSearch from '../src/breadth-search';\\n\\nconst graph = new Map();\\n\\ngraph.set('you', ['alice', 'bob', 'claire']);\\ngraph.set('bob', ['anuj', 'peggy']);\\ngraph.set('alice', ['peggy']);\\ngraph.set('claire', ['thom', 'jonny']);\\ngraph.set('anuj', []);\\ngraph.set('peggy', []);\\ngraph.set('thom', []);\\ngraph.set('jonny', []);\\n\\ntest('quick sort in ascending order', () => {\\n  expect(breadthSearch(new Map([['you', []]]), 'you')).toBeFalsy();\\n  expect(breadthSearch(graph, 'you')).toBe('thom');\\n});\\n\",\"usedDeprecatedRules\":[]},{\"filePath\":\"/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/__tests__/quick-sort.test.js\",\"messages\":[{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'test' is not defined.\",\"line\":3,\"column\":1,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":3,\"endColumn\":5},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":4,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":4,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":5,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":5,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":6,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":6,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":7,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":7,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":8,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":8,\"endColumn\":9}],\"suppressedMessages\":[],\"errorCount\":6,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":\"import quickSort from '../src/quick-sort';\\n\\ntest('quick sort in ascending order', () => {\\n  expect(quickSort([])).toEqual([]);\\n  expect(quickSort([9])).toEqual([9]);\\n  expect(quickSort([8, 3])).toEqual([3, 8]);\\n  expect(quickSort([5, 5, 1, 4, 5, 0, 83, 2, 9])).toEqual([0, 1, 2, 4, 5, 5, 5, 9, 83]);\\n  expect(quickSort([2, 5, 2, 7, 9, 0, 1])).toEqual([0, 1, 2, 2, 5, 7, 9]);\\n});\\n\",\"usedDeprecatedRules\":[]},{\"filePath\":\"/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/__tests__/sorting-by-choice.test.js\",\"messages\":[{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'test' is not defined.\",\"line\":3,\"column\":1,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":3,\"endColumn\":5},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":4,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":4,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":5,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":5,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":6,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":6,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":7,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":7,\"endColumn\":9},{\"ruleId\":\"no-undef\",\"severity\":2,\"message\":\"'expect' is not defined.\",\"line\":8,\"column\":3,\"nodeType\":\"Identifier\",\"messageId\":\"undef\",\"endLine\":8,\"endColumn\":9}],\"suppressedMessages\":[],\"errorCount\":6,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":\"import sortingByChoice from '../src/sorting-by-choice';\\n\\ntest('sorting by choice in descending order', () => {\\n  expect(sortingByChoice([])).toEqual([]);\\n  expect(sortingByChoice([9])).toEqual([9]);\\n  expect(sortingByChoice([3, 8])).toEqual([8, 3]);\\n  expect(sortingByChoice([1, 2, 3, 4, 5, 6, 7])).toEqual([7, 6, 5, 4, 3, 2, 1]);\\n  expect(sortingByChoice([2, 5, 2, 7, 9, 0, 1])).toEqual([9, 7, 5, 2, 2, 1, 0]);\\n});\\n\",\"usedDeprecatedRules\":[]},{\"filePath\":\"/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/src/binary-search.js\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\"/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/src/breadth-search.js\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\"/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/src/quick-sort.js\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\"/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/src/sorting-by-choice.js\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+[
+  {
+    "filePath": "/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/__tests__/weather.test.js",
+    "messages": [
+      {
+        "ruleId": "no-undef",
+        "severity": 2,
+        "message": "'describe' is not defined.",
+        "line": 6,
+        "column": 1,
+        "nodeType": "Identifier",
+        "messageId": "undef",
+        "endLine": 6,
+        "endColumn": 9
+      },
+      {
+        "ruleId": "no-undef",
+        "severity": 2,
+        "message": "'test' is not defined.",
+        "line": 7,
+        "column": 3,
+        "nodeType": "Identifier",
+        "messageId": "undef",
+        "endLine": 7,
+        "endColumn": 7
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 2,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/src/bin/weather.js",
+    "messages": [
+      {
+        "ruleId": "no-undef",
+        "severity": 2,
+        "message": "'process' is not defined.",
+        "line": 19,
+        "column": 17,
+        "nodeType": "Identifier",
+        "messageId": "undef",
+        "endLine": 19,
+        "endColumn": 24
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/Users/dkabanov/Documents/rails-project-lvl4/tmp/repo/src/index.js",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  }
+]
