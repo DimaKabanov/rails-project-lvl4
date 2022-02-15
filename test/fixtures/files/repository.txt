@@ -1,0 +1,41 @@
+{
+  : id => 141040206,: node_id => "MDEwOlJlcG9zaXRvcnkxNDEwNDAyMDY=",: name => "Algorithms",: full_name => "DimaKabanov/Algorithms",: private => false,: owner => {
+      : login => "DimaKabanov",: id => 14791057,: node_id => "MDQ6VXNlcjE0NzkxMDU3",: avatar_url => "https://avatars.githubusercontent.com/u/14791057?v=4",: gravatar_id => "",: url => "https://api.github.com/users/DimaKabanov",: html_url => "https://github.com/DimaKabanov",: followers_url => "https://api.github.com/users/DimaKabanov/followers",: following_url =>
+        "https://api.github.com/users/DimaKabanov/following{/other_user}",: gists_url => "https://api.github.com/users/DimaKabanov/gists{/gist_id}",: starred_url =>
+        "https://api.github.com/users/DimaKabanov/starred{/owner}{/repo}",: subscriptions_url =>
+        "https://api.github.com/users/DimaKabanov/subscriptions",: organizations_url => "https://api.github.com/users/DimaKabanov/orgs",: repos_url => "https://api.github.com/users/DimaKabanov/repos",: events_url => "https://api.github.com/users/DimaKabanov/events{/privacy}",: received_events_url =>
+        "https://api.github.com/users/DimaKabanov/received_events",: type => "User",: site_admin => false
+    },: html_url => "https://github.com/DimaKabanov/Algorithms",: description => "Реализация алгоритмов из книги - Грокаем алгоритмы",: fork => false,: url => "https://api.github.com/repos/DimaKabanov/Algorithms",: forks_url => "https://api.github.com/repos/DimaKabanov/Algorithms/forks",: keys_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/keys{/key_id}",: collaborators_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/collaborators{/collaborator}",: teams_url => "https://api.github.com/repos/DimaKabanov/Algorithms/teams",: hooks_url => "https://api.github.com/repos/DimaKabanov/Algorithms/hooks",: issue_events_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/issues/events{/number}",: events_url => "https://api.github.com/repos/DimaKabanov/Algorithms/events",: assignees_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/assignees{/user}",: branches_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/branches{/branch}",: tags_url => "https://api.github.com/repos/DimaKabanov/Algorithms/tags",: blobs_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/git/blobs{/sha}",: git_tags_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/git/tags{/sha}",: git_refs_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/git/refs{/sha}",: trees_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/git/trees{/sha}",: statuses_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/statuses/{sha}",: languages_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/languages",: stargazers_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/stargazers",: contributors_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/contributors",: subscribers_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/subscribers",: subscription_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/subscription",: commits_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/commits{/sha}",: git_commits_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/git/commits{/sha}",: comments_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/comments{/number}",: issue_comment_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/issues/comments{/number}",: contents_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/contents/{+path}",: compare_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/compare/{base}...{head}",: merges_url => "https://api.github.com/repos/DimaKabanov/Algorithms/merges",: archive_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/{archive_format}{/ref}",: downloads_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/downloads",: issues_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/issues{/number}",: pulls_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/pulls{/number}",: milestones_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/milestones{/number}",: notifications_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/notifications{?since,all,participating}",: labels_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/labels{/name}",: releases_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/releases{/id}",: deployments_url =>
+    "https://api.github.com/repos/DimaKabanov/Algorithms/deployments",: created_at => 2018 - 07 - 15 16: 01: 16 UTC,: updated_at => 2018 - 07 - 23 14: 27: 15 UTC,: pushed_at => 2018 - 07 - 23 14: 27: 13 UTC,: git_url => "git://github.com/DimaKabanov/Algorithms.git",: ssh_url => "git@github.com:DimaKabanov/Algorithms.git",: clone_url => "https://github.com/DimaKabanov/Algorithms.git",: svn_url => "https://github.com/DimaKabanov/Algorithms",: homepage => "",: size => 64,: stargazers_count => 0,: watchers_count => 0,: language => "JavaScript",: has_issues => true,: has_projects => true,: has_downloads => true,: has_wiki => true,: has_pages => false,: forks_count => 0,: mirror_url => nil,: archived => false,: disabled => false,: open_issues_count => 0,: license => nil,: allow_forking => true,: is_template => false,: topics => [],: visibility => "public",: forks => 0,: open_issues => 0,: watchers => 0,: default_branch => "master",: permissions => {
+      : admin => true,: maintain => true,: push => true,: triage => true,: pull => true
+    },: temp_clone_token => "",: allow_squash_merge => true,: allow_merge_commit => true,: allow_rebase_merge => true,: allow_auto_merge => false,: delete_branch_on_merge => false,: allow_update_branch => false,: network_count => 0,: subscribers_count => 1
+}

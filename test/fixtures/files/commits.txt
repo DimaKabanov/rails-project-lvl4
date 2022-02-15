@@ -1,0 +1,85 @@
+[{
+    : sha => "c631a80a6594046ff177083f75b57cc616ab2664",
+    : node_id =>
+      "MDY6Q29tbWl0MTQxMDQwMjA2OmM2MzFhODBhNjU5NDA0NmZmMTc3MDgzZjc1YjU3Y2M2MTZhYjI2NjQ=",
+    : commit => {
+      : author => {
+          : name => "Dmitry Kabanov",: email => "dkabanov6@gmail.com",: date => 2018 - 07 - 23 14: 26: 58 UTC
+        },: committer => {
+          : name => "Dmitry Kabanov",: email => "dkabanov6@gmail.com",: date => 2018 - 07 - 23 14: 26: 58 UTC
+        },: message => "implemented an algorithm for a breadth search",: tree => {
+          : sha => "c3fce651a1f3f533e2ca0ac112a046c74a953083",: url =>
+            "https://api.github.com/repos/DimaKabanov/Algorithms/git/trees/c3fce651a1f3f533e2ca0ac112a046c74a953083"
+        },: url =>
+        "https://api.github.com/repos/DimaKabanov/Algorithms/git/commits/c631a80a6594046ff177083f75b57cc616ab2664",: comment_count => 0,: verification => {
+          : verified => false,: reason => "unsigned",: signature => nil,: payload => nil
+        }
+    },
+    : url =>
+      "https://api.github.com/repos/DimaKabanov/Algorithms/commits/c631a80a6594046ff177083f75b57cc616ab2664",
+    : html_url =>
+      "https://github.com/DimaKabanov/Algorithms/commit/c631a80a6594046ff177083f75b57cc616ab2664",
+    : comments_url =>
+      "https://api.github.com/repos/DimaKabanov/Algorithms/commits/c631a80a6594046ff177083f75b57cc616ab2664/comments",
+    : author => {
+      : login => "DimaKabanov",: id => 14791057,: node_id => "MDQ6VXNlcjE0NzkxMDU3",: avatar_url => "https://avatars.githubusercontent.com/u/14791057?v=4",: gravatar_id => "",: url => "https://api.github.com/users/DimaKabanov",: html_url => "https://github.com/DimaKabanov",: followers_url => "https://api.github.com/users/DimaKabanov/followers",: following_url =>
+        "https://api.github.com/users/DimaKabanov/following{/other_user}",: gists_url => "https://api.github.com/users/DimaKabanov/gists{/gist_id}",: starred_url =>
+        "https://api.github.com/users/DimaKabanov/starred{/owner}{/repo}",: subscriptions_url =>
+        "https://api.github.com/users/DimaKabanov/subscriptions",: organizations_url => "https://api.github.com/users/DimaKabanov/orgs",: repos_url => "https://api.github.com/users/DimaKabanov/repos",: events_url => "https://api.github.com/users/DimaKabanov/events{/privacy}",: received_events_url =>
+        "https://api.github.com/users/DimaKabanov/received_events",: type => "User",: site_admin => false
+    },
+    : committer => {
+      : login => "DimaKabanov",: id => 14791057,: node_id => "MDQ6VXNlcjE0NzkxMDU3",: avatar_url => "https://avatars.githubusercontent.com/u/14791057?v=4",: gravatar_id => "",: url => "https://api.github.com/users/DimaKabanov",: html_url => "https://github.com/DimaKabanov",: followers_url => "https://api.github.com/users/DimaKabanov/followers",: following_url =>
+        "https://api.github.com/users/DimaKabanov/following{/other_user}",: gists_url => "https://api.github.com/users/DimaKabanov/gists{/gist_id}",: starred_url =>
+        "https://api.github.com/users/DimaKabanov/starred{/owner}{/repo}",: subscriptions_url =>
+        "https://api.github.com/users/DimaKabanov/subscriptions",: organizations_url => "https://api.github.com/users/DimaKabanov/orgs",: repos_url => "https://api.github.com/users/DimaKabanov/repos",: events_url => "https://api.github.com/users/DimaKabanov/events{/privacy}",: received_events_url =>
+        "https://api.github.com/users/DimaKabanov/received_events",: type => "User",: site_admin => false
+    },
+    : parents => [{
+      : sha => "0ac8e712ed7e90822f4beeffa373e1e560e0bea9",
+      : url =>
+        "https://api.github.com/repos/DimaKabanov/Algorithms/commits/0ac8e712ed7e90822f4beeffa373e1e560e0bea9",
+      : html_url =>
+        "https://github.com/DimaKabanov/Algorithms/commit/0ac8e712ed7e90822f4beeffa373e1e560e0bea9"
+    }]
+  },
+  {
+    : sha => "32f36332c64d39ff8d14a25d2274fd25083dcfb6",
+    : node_id =>
+      "MDY6Q29tbWl0MTQxMDQwMjA2OjMyZjM2MzMyYzY0ZDM5ZmY4ZDE0YTI1ZDIyNzRmZDI1MDgzZGNmYjY=",
+    : commit => {
+      : author => {
+          : name => "Dmitry Kabanov",: email => "dkabanov6@gmail.com",: date => 2018 - 07 - 15 16: 07: 26 UTC
+        },: committer => {
+          : name => "Dmitry Kabanov",: email => "dkabanov6@gmail.com",: date => 2018 - 07 - 15 16: 07: 26 UTC
+        },: message => "init project",: tree => {
+          : sha => "1774372e1ae33a782f672dce7f39e7cd7d4dbcb9",: url =>
+            "https://api.github.com/repos/DimaKabanov/Algorithms/git/trees/1774372e1ae33a782f672dce7f39e7cd7d4dbcb9"
+        },: url =>
+        "https://api.github.com/repos/DimaKabanov/Algorithms/git/commits/32f36332c64d39ff8d14a25d2274fd25083dcfb6",: comment_count => 0,: verification => {
+          : verified => false,: reason => "unsigned",: signature => nil,: payload => nil
+        }
+    },
+    : url =>
+      "https://api.github.com/repos/DimaKabanov/Algorithms/commits/32f36332c64d39ff8d14a25d2274fd25083dcfb6",
+    : html_url =>
+      "https://github.com/DimaKabanov/Algorithms/commit/32f36332c64d39ff8d14a25d2274fd25083dcfb6",
+    : comments_url =>
+      "https://api.github.com/repos/DimaKabanov/Algorithms/commits/32f36332c64d39ff8d14a25d2274fd25083dcfb6/comments",
+    : author => {
+      : login => "DimaKabanov",: id => 14791057,: node_id => "MDQ6VXNlcjE0NzkxMDU3",: avatar_url => "https://avatars.githubusercontent.com/u/14791057?v=4",: gravatar_id => "",: url => "https://api.github.com/users/DimaKabanov",: html_url => "https://github.com/DimaKabanov",: followers_url => "https://api.github.com/users/DimaKabanov/followers",: following_url =>
+        "https://api.github.com/users/DimaKabanov/following{/other_user}",: gists_url => "https://api.github.com/users/DimaKabanov/gists{/gist_id}",: starred_url =>
+        "https://api.github.com/users/DimaKabanov/starred{/owner}{/repo}",: subscriptions_url =>
+        "https://api.github.com/users/DimaKabanov/subscriptions",: organizations_url => "https://api.github.com/users/DimaKabanov/orgs",: repos_url => "https://api.github.com/users/DimaKabanov/repos",: events_url => "https://api.github.com/users/DimaKabanov/events{/privacy}",: received_events_url =>
+        "https://api.github.com/users/DimaKabanov/received_events",: type => "User",: site_admin => false
+    },
+    : committer => {
+      : login => "DimaKabanov",: id => 14791057,: node_id => "MDQ6VXNlcjE0NzkxMDU3",: avatar_url => "https://avatars.githubusercontent.com/u/14791057?v=4",: gravatar_id => "",: url => "https://api.github.com/users/DimaKabanov",: html_url => "https://github.com/DimaKabanov",: followers_url => "https://api.github.com/users/DimaKabanov/followers",: following_url =>
+        "https://api.github.com/users/DimaKabanov/following{/other_user}",: gists_url => "https://api.github.com/users/DimaKabanov/gists{/gist_id}",: starred_url =>
+        "https://api.github.com/users/DimaKabanov/starred{/owner}{/repo}",: subscriptions_url =>
+        "https://api.github.com/users/DimaKabanov/subscriptions",: organizations_url => "https://api.github.com/users/DimaKabanov/orgs",: repos_url => "https://api.github.com/users/DimaKabanov/repos",: events_url => "https://api.github.com/users/DimaKabanov/events{/privacy}",: received_events_url =>
+        "https://api.github.com/users/DimaKabanov/received_events",: type => "User",: site_admin => false
+    },
+    : parents => []
+  }
+]

@@ -8,6 +8,8 @@ ruby '~> 3.0.1'
 gem 'aasm'
 
 gem 'dotenv-rails', groups: %i[development test]
+gem 'dry-auto_inject'
+gem 'dry-container'
 
 gem 'enumerize'
 

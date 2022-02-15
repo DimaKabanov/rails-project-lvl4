@@ -18,6 +18,7 @@ class CheckRepositoryJob < ApplicationJob
   end
 
   def perform(check)
+    repository_api = ApplicationContainer[:repository_api]
     repository = check.repository
 
     check.check!
@@ -37,8 +38,8 @@ class CheckRepositoryJob < ApplicationJob
       error_count = actions[:get_error_count].call(results)
       parsed_results = actions[:parse_check_results].call(results)
 
-      client = Octokit::Client.new(access_token: repository.user.token, per_page: 200)
-      last_commit = client.commits(repository.github_id.to_i).first
+      client = repository_api.client(repository.user.token)
+      last_commit = repository_api.get_repository_commits(client, repository.github_id.to_i).first
 
       check.update(
         passed: error_count.zero?,
