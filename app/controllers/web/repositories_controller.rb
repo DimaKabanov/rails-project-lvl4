@@ -23,9 +23,9 @@ class Web::RepositoriesController < ApplicationController
     client = repository_api.client(current_user.token)
     client_repositories = repository_api.get_repositories(client)
     @repos = client_repositories
-             .select { |repo| repo.language.present? }
-             .filter { |repo| available_languages.include? repo.language.downcase }
-             .map { |repo| [repo.full_name, repo.id] }
+             .select { |repo| repo[:language].present? }
+             .filter { |repo| available_languages.include? repo[:language].downcase }
+             .map { |repo| [repo[:full_name], repo[:id]] }
 
     @repository = current_user.repositories.build
   end
