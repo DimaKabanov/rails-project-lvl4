@@ -5,16 +5,13 @@ class CheckRepositoryJob < ApplicationJob
 
   before_perform do
     @repo_path = 'tmp/repo'
+    @check_api = ApplicationContainer[:check_api]
 
-    if Dir.exist?(@repo_path)
-      FileUtils.remove_dir(@repo_path, true)
-    end
-
-    Dir.mkdir(@repo_path)
+    @check_api.create_repo_dir(@repo_path)
   end
 
   after_perform do
-    FileUtils.remove_dir(@repo_path, true)
+    @check_api.remove_repo_dir(@repo_path)
   end
 
   def perform(check)
@@ -25,13 +22,15 @@ class CheckRepositoryJob < ApplicationJob
 
     begin
       clone_command = "git clone #{repository.clone_url} #{@repo_path}"
-      start_process(clone_command)
+      @check_api.clone_repo(clone_command)
 
       actions = get_check_actions(repository.language.to_sym)
 
-      start_process(actions[:remove_config_command])
+      remove_config_command = actions[:remove_config_command]
+      @check_api.remove_config(remove_config_command)
 
-      check_results = start_process(actions[:check_command])
+      check_command = actions[:check_command]
+      check_results = @check_api.check_repo(check_command)
 
       results = JSON.parse(check_results)
 
@@ -52,18 +51,13 @@ class CheckRepositoryJob < ApplicationJob
 
       check.finish!
       CheckMailer.with(check: check).check_success_email.deliver_now
-    rescue StandardError => e
-      Rails.logger.debug(e)
+    rescue StandardError
       check.reject!
       CheckMailer.with(check: check).check_error_email.deliver_now
     end
   end
 
   private
-
-  def start_process(command)
-    Open3.popen3(command) { |_stdin, stdout| stdout.read }
-  end
 
   def get_check_actions(language)
     actions = {
