@@ -18,7 +18,7 @@ class Web::RepositoriesController < ApplicationController
     authorize Repository
     available_languages = Repository.language.values
 
-    client = Octokit::Client.new access_token: current_user.token
+    client = Octokit::Client.new(access_token: current_user.token, per_page: 100)
     @repos = client.repos
                    .select { |repo| repo.language.present? }
                    .filter { |repo| available_languages.include? repo.language.downcase }
