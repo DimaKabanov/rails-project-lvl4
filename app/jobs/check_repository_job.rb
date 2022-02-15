@@ -46,8 +46,8 @@ class CheckRepositoryJob < ApplicationJob
         error_count: error_count,
         language: repository.language,
         result: JSON.generate(parsed_results),
-        reference_url: last_commit['html_url'],
-        reference_sha: last_commit['sha'][0, 8]
+        reference_url: last_commit[:html_url],
+        reference_sha: last_commit[:sha][0, 8]
       )
 
       check.finish!
