@@ -1,15 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  github_id: '1'
-  full_name: MyString
-  name: MyString
-  language: MyString
-  clone_url: MyString
+created:
+  github_id: "1"
   user: one
 
+updated:
+  github_id: "2"
+  user: one
+  full_name: "DimaKabanov/Algorithms"
+  language: javascript
+  clone_url: "https://github.com/DimaKabanov/Algorithms.git"
+  name: Algorithms
+
 two:
-  github_id: '2'
+  github_id: "3"
   full_name: MyString
   name: MyString
   language: MyString
