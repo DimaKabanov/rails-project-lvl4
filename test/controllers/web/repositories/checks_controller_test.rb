@@ -13,7 +13,6 @@ class Web::Repositories::ChecksControllerTest < ActionDispatch::IntegrationTest
     check = repository_checks :updated
 
     get repository_check_path repository, check
-    debugger
     assert_response :success
   end
 end
