@@ -31,7 +31,7 @@ class CheckRepositoryJob < ApplicationJob
 
       check_command = actions[:check_command]
       check_results = @check_api.check_repo(check_command)
-
+      pp check_results
       results = JSON.parse(check_results)
 
       error_count = actions[:get_error_count].call(results)
