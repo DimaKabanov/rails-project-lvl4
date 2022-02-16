@@ -5,6 +5,11 @@ created:
   passed: false
   repository: updated
 
+updated:
+  aasm_state: finished
+  passed: true
+  repository: updated
+
 two:
   aasm_state: created
   passed: false
