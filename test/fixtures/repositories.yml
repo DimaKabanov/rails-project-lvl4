@@ -12,10 +12,10 @@ updated:
   clone_url: "https://github.com/DimaKabanov/Algorithms.git"
   name: Algorithms
 
-two:
+without_checks:
   github_id: "3"
-  full_name: MyString
-  name: MyString
-  language: MyString
-  clone_url: MyString
-  user: two
+  user: one
+  full_name: "DimaKabanov/Algorithms"
+  language: javascript
+  clone_url: "https://github.com/DimaKabanov/Algorithms.git"
+  name: Algorithms

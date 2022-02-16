@@ -15,4 +15,14 @@ class Web::Repositories::ChecksControllerTest < ActionDispatch::IntegrationTest
     get repository_check_path repository, check
     assert_response :success
   end
+
+  test 'should create new check' do
+    repository = repositories :without_checks
+    post repository_checks_path repository
+
+    check = repository.checks.last
+
+    assert { check.created? }
+    assert { !check.passed? }
+  end
 end
