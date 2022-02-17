@@ -63,7 +63,7 @@ class CheckRepositoryJob < ApplicationJob
     actions = {
       javascript: {
         remove_config_command: "find #{@repo_path} -name '.eslintrc*' -delete",
-        check_command: "npx eslint #{@repo_path} -f json",
+        check_command: "yarn run #{@repo_path} -f json",
         parse_check_results: ->(results) { parse_eslint_results(results) },
         get_error_count: ->(results) { results.sum { |result| result['errorCount'] } }
       },
