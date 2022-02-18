@@ -32,7 +32,7 @@ class CheckRepositoryJob < ApplicationJob
       check_command = actions[:check_command]
       check_results = @check_api.check_repo(check_command)
 
-      results = JSON.parse(check_results)
+      results = actions[:parse_results].call(check_results)
 
       error_count = actions[:get_error_count].call(results)
       parsed_results = actions[:parse_check_results].call(results)
@@ -63,15 +63,17 @@ class CheckRepositoryJob < ApplicationJob
     actions = {
       javascript: {
         remove_config_command: "find #{@repo_path} -name '.eslintrc*' -delete",
-        check_command: "yarn run #{@repo_path} -f json",
+        check_command: "yarn run eslint #{@repo_path} -f json",
         parse_check_results: ->(results) { parse_eslint_results(results) },
-        get_error_count: ->(results) { results.sum { |result| result['errorCount'] } }
+        get_error_count: ->(results) { results.sum { |result| result['errorCount'] } },
+        parse_results: ->(results) { JSON.parse(results[/\[.*]/]) }
       },
       ruby: {
         remove_config_command: ':',
         check_command: "bundle exec rubocop #{@repo_path} --format json",
         parse_check_results: ->(results) { parce_rubocop_result(results) },
-        get_error_count: ->(results) { results['summary']['offense_count'] }
+        get_error_count: ->(results) { results['summary']['offense_count'] },
+        parse_results: ->(results) { JSON.parse(results) }
       }
     }
 
