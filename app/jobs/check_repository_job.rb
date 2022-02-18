@@ -3,8 +3,9 @@
 class CheckRepositoryJob < ApplicationJob
   queue_as :default
 
-  before_perform do
-    @repo_path = 'tmp/repo'
+  before_perform do |job|
+    check = job.arguments.first
+    @repo_path = "tmp/#{check.repository.name}"
     @check_api = ApplicationContainer[:check_api]
 
     @check_api.create_repo_dir(@repo_path)
