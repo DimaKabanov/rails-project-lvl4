@@ -12,6 +12,6 @@
       tbody
         - @repositories.each do |repository|
           tr
-            td = repository.full_name ? link_to(repository.full_name, repository) : ''
+            td = repository.full_name ? link_to(repository.full_name, repository) : t('.loading')
             td = repository.language&.text
             td = repository.checks.last.passed
