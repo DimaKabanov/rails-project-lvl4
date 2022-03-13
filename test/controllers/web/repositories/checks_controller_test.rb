@@ -22,7 +22,7 @@ class Web::Repositories::ChecksControllerTest < ActionDispatch::IntegrationTest
 
     check = repository.checks.last
 
-    assert { check.created? }
-    assert { !check.passed? }
+    assert { check.finished? }
+    assert { check.passed? }
   end
 end

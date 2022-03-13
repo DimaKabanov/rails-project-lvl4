@@ -7,7 +7,7 @@ class Web::RepositoriesControllerTest < ActionDispatch::IntegrationTest
     @user = users(:one)
     sign_in_as_user @user
     @attrs = {
-      github_id: '1'
+      github_id: '4'
     }
   end
 
@@ -36,6 +36,11 @@ class Web::RepositoriesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to repositories_path
     assert { repository }
-    assert_enqueued_with job: UpdateInfoRepositoryJob
+
+    full_name = 'DimaKabanov/Algorithms'
+    language = 'javascript'
+
+    assert { full_name == repository.full_name }
+    assert { language == repository.language }
   end
 end
