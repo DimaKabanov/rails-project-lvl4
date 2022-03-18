@@ -10,7 +10,7 @@ class ActiveSupport::TestCase
     queue_adapter.perform_enqueued_at_jobs = true
   end
   # Run tests in parallel with specified workers
-  parallelize(workers: :number_of_processors)
+  parallelize(workers: 1)
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
