@@ -38,7 +38,7 @@ class Web::RepositoriesControllerTest < ActionDispatch::IntegrationTest
     assert { repository }
 
     full_name = 'DimaKabanov/Algorithms'
-    language = 'javascript'
+    language = 'ruby'
 
     assert { full_name == repository.full_name }
     assert { language == repository.language }
