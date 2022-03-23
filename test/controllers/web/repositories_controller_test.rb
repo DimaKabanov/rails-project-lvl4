@@ -37,7 +37,7 @@ class Web::RepositoriesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to repositories_path
     assert { repository }
 
-    full_name = 'DimaKabanov/Algorithms'
+    full_name = 'Hexlet/hexlet-cv'
     language = 'ruby'
 
     assert { full_name == repository.full_name }
