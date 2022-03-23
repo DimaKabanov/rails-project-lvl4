@@ -13,7 +13,6 @@ class UpdateInfoRepositoryJob < ApplicationJob
     found_repo = repository_api.get_repository(client, github_id)
 
     repository.update(
-      github_id: found_repo[:id],
       full_name: found_repo[:full_name],
       name: found_repo[:name],
       clone_url: found_repo[:clone_url],
