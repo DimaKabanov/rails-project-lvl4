@@ -3,49 +3,27 @@
 class CheckRepositoryJob < ApplicationJob
   queue_as :default
 
-  before_perform do |job|
-    check = job.arguments.first
-    @repo_path = "tmp/#{check.repository.name}"
-    @check_api = ApplicationContainer[:check_api]
-
-    @check_api.create_repo_dir(@repo_path)
-  end
-
-  after_perform do
-    @check_api.remove_repo_dir(@repo_path)
-  end
-
   def perform(check)
-    repository_api = ApplicationContainer[:repository_api]
     repository = check.repository
+
+    check_api = ApplicationContainer[:check_api].new(repository)
+    repository_api = ApplicationContainer[:repository_api]
 
     check.check!
 
     begin
-      clone_command = "git clone #{repository.clone_url} #{@repo_path}"
-      @check_api.clone_repo(clone_command)
-
-      actions = get_check_actions(repository.language.to_sym)
-
-      remove_config_command = actions[:remove_config_command]
-      @check_api.remove_config(remove_config_command)
-
-      check_command = actions[:check_command]
-      check_results = @check_api.check_repo(check_command)
-
-      results = actions[:parse_results].call(check_results)
-
-      error_count = actions[:get_error_count].call(results)
-      parsed_results = actions[:parse_check_results].call(results)
+      check_api.create_repo_dir
+      check_api.clone_repo
+      check_result = check_api.check_repo
 
       client = repository_api.client(repository.user.token)
       last_commit = repository_api.get_repository_commits(client, repository.github_id.to_i).first
 
       check.update(
-        passed: error_count.zero?,
-        error_count: error_count,
+        passed: check_result[:error_count].zero?,
+        error_count: check_result[:error_count],
         language: repository.language,
-        result: JSON.generate(parsed_results),
+        result: check_result[:results],
         reference_url: last_commit[:html_url],
         reference_sha: last_commit[:sha][0, 8]
       )
@@ -55,67 +33,8 @@ class CheckRepositoryJob < ApplicationJob
     rescue StandardError
       check.reject!
       CheckMailer.with(check: check).check_error_email.deliver_now
+    ensure
+      check_api.remove_repo_dir
     end
-  end
-
-  private
-
-  def get_check_actions(language)
-    actions = {
-      javascript: {
-        remove_config_command: "find #{@repo_path} -name '.eslintrc*' -delete",
-        check_command: "yarn run eslint #{@repo_path} -f json",
-        parse_check_results: ->(results) { parse_eslint_results(results) },
-        get_error_count: ->(results) { results.sum { |result| result['errorCount'] } },
-        parse_results: ->(results) { JSON.parse(results[/\[.*]/]) }
-      },
-      ruby: {
-        remove_config_command: ':',
-        check_command: "bundle exec rubocop #{@repo_path} --format json",
-        parse_check_results: ->(results) { parce_rubocop_result(results) },
-        get_error_count: ->(results) { results['summary']['offense_count'] },
-        parse_results: ->(results) { JSON.parse(results) }
-      }
-    }
-
-    actions[language]
-  end
-
-  def parse_eslint_message(message)
-    {
-      message: message['message'],
-      rule: message['ruleId'],
-      line_column: "#{message['line']}:#{message['column']}"
-    }
-  end
-
-  def parse_eslint_results(results)
-    results
-      .filter { |result| result['errorCount'].positive? }
-      .map do |result|
-        {
-          file_path: result['filePath'],
-          messages: result['messages'].map { |message| parse_eslint_message(message) }
-        }
-      end
-  end
-
-  def parse_rubocop_offense(offense)
-    {
-      message: offense['message'],
-      rule: offense['cop_name'],
-      line_column: "#{offense['location']['line']}:#{offense['location']['column']}"
-    }
-  end
-
-  def parce_rubocop_result(results)
-    results['files']
-      .filter { |file| file['offenses'].any? }
-      .map do |file|
-        {
-          file_path: file['path'],
-          messages: file['offenses'].map { |offense| parse_rubocop_offense(offense) }
-        }
-      end
   end
 end
