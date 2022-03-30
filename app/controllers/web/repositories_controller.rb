@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Web::RepositoriesController < ApplicationController
-  include Import['repository_api']
-
   after_action :verify_authorized
 
   def index
@@ -18,15 +16,7 @@ class Web::RepositoriesController < ApplicationController
 
   def new
     authorize Repository
-    available_languages = Repository.language.values
-
-    client = repository_api.client(current_user.token)
-    client_repositories = repository_api.get_repositories(client)
-    @repos = client_repositories
-             .select { |repo| repo[:language].present? }
-             .filter { |repo| available_languages.include? repo[:language].downcase }
-             .map { |repo| [repo[:full_name], repo[:id]] }
-
+    @repos = Repository.client_repos(current_user.token, current_user.id)
     @repository = current_user.repositories.build
   end
 
