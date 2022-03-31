@@ -20,6 +20,9 @@ en:
         state: State
         reference: Reference
         check_passed: Check passed
+      new:
+        title: Add repository
+        invalidate: Update repositories list
       checks:
         create:
           success: Check was successfully created

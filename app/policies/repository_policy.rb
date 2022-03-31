@@ -17,6 +17,10 @@ class RepositoryPolicy < ApplicationPolicy
     user && author?
   end
 
+  def invalidate?
+    user
+  end
+
   private
 
   def author?

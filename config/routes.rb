@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get '/auth/:provider/callback', to: 'auth#callback', as: :callback_auth, via: :all
     post '/auth/:provider', to: 'auth#request', as: :auth_request
     delete '/auth/logout', to: 'auth#logout', as: :auth_logout
+    get '/invalidate', to: 'repositories#invalidate', as: :invalidate_repos
 
     resources :repositories, only: %i[index show new create] do
       scope module: :repositories do

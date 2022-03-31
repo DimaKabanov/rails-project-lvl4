@@ -1,3 +1,4 @@
 .p-3.p-md-4.p-lg-5.border-0.shadow
   h2 = t('.title')
+  = link_to(t('.invalidate'), invalidate_repos_path, class: 'btn btn-link mb-3 mt-2')
   = render 'form', repository: @repository, url: repositories_path

@@ -33,6 +33,12 @@ class Web::RepositoriesController < ApplicationController
     end
   end
 
+  def invalidate
+    authorize Repository
+    Repository.invalidate_repos_cache(current_user.id)
+    redirect_to new_repository_path
+  end
+
   private
 
   def repository_params

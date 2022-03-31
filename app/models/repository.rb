@@ -13,7 +13,7 @@ class Repository < ApplicationRecord
   def self.client_repos(user_token, user_id)
     Rails.cache.fetch([user_id, :client_repositories]) do
       repository_api = ApplicationContainer[:repository_api]
-      available_languages = self.language.values
+      available_languages = Repository.language.values
       client = repository_api.client(user_token)
       client_repositories = repository_api.get_repositories(client)
       client_repositories
@@ -25,5 +25,5 @@ class Repository < ApplicationRecord
 
   def self.invalidate_repos_cache(user_id)
     Rails.cache.delete([user_id, :client_repositories])
- end
+  end
 end
