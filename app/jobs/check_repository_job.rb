@@ -7,7 +7,7 @@ class CheckRepositoryJob < ApplicationJob
     repository = check.repository
 
     check_api = ApplicationContainer[:check_api].new(repository)
-    repository_api = ApplicationContainer[:repository_api]
+    repository_api = ApplicationContainer[:repository_api].new(repository.user.token)
 
     check.check!
 
@@ -16,8 +16,7 @@ class CheckRepositoryJob < ApplicationJob
       check_api.clone_repo
       check_result = check_api.check_repo
 
-      client = repository_api.client(repository.user.token)
-      last_commit = repository_api.get_repository_commits(client, repository.github_id.to_i).first
+      last_commit = repository_api.repository_commits(repository.github_id.to_i).first
 
       check.update(
         passed: check_result[:error_count].zero?,

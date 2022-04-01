@@ -6,11 +6,10 @@ class UpdateInfoRepositoryJob < ApplicationJob
   queue_as :default
 
   def perform(repository)
-    repository_api = ApplicationContainer[:repository_api]
+    repository_api = ApplicationContainer[:repository_api].new(repository.user.token)
     github_id = repository.github_id.to_i
 
-    client = repository_api.client(repository.user.token)
-    found_repo = repository_api.get_repository(client, github_id)
+    found_repo = repository_api.repository(github_id)
 
     repository.update(
       full_name: found_repo[:full_name],
@@ -20,6 +19,6 @@ class UpdateInfoRepositoryJob < ApplicationJob
     )
 
     CheckRepositoryJob.perform_later(repository.checks.last)
-    repository_api.create_hook(client, github_id, api_checks_url)
+    repository_api.create_hook(github_id, api_checks_url)
   end
 end
